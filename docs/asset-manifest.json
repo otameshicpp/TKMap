@@ -1,0 +1,19 @@
+{
+  "files": {
+    "main.css": "/ButsuriKadaiKenkyu/static/css/main.e20d6220.css",
+    "main.js": "/ButsuriKadaiKenkyu/static/js/main.dbd3cf18.js",
+    "static/js/787.b94a327f.chunk.js": "/ButsuriKadaiKenkyu/static/js/787.b94a327f.chunk.js",
+    "static/media/buturi-2A.mov": "/ButsuriKadaiKenkyu/static/media/buturi-2A.88e8042d13a65f2aee24.mov",
+    "static/media/chiri-2A.mov": "/ButsuriKadaiKenkyu/static/media/chiri-2A.aba7b5894059400ef5e5.mov",
+    "static/media/chiri-seibutu3.mov": "/ButsuriKadaiKenkyu/static/media/chiri-seibutu3.e3857414715e0081de58.mov",
+    "static/media/buturi-seibutu2.mov": "/ButsuriKadaiKenkyu/static/media/buturi-seibutu2.0a417b1da4a3b37c150c.mov",
+    "index.html": "/ButsuriKadaiKenkyu/index.html",
+    "main.e20d6220.css.map": "/ButsuriKadaiKenkyu/static/css/main.e20d6220.css.map",
+    "main.dbd3cf18.js.map": "/ButsuriKadaiKenkyu/static/js/main.dbd3cf18.js.map",
+    "787.b94a327f.chunk.js.map": "/ButsuriKadaiKenkyu/static/js/787.b94a327f.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e20d6220.css",
+    "static/js/main.dbd3cf18.js"
+  ]
+}
