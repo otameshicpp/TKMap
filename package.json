@@ -13,7 +13,6 @@
     "react-scripts": "5.0.1",
     "web-vitals": "^2.1.4"
   },
-  "homepage": "https://otameshicpp.github.io/ButsuriKadaiKenkyu/",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
@@ -23,7 +22,8 @@
     "mv": "mv build docs",
     "git": "git add . && git commit && git push origin master",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "deploy": "gh-pages -d build",
+    "postbuild": "cp build/index.html build/404.html"
   },
   "eslintConfig": {
     "extends": [
