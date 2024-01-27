@@ -272,6 +272,12 @@ function Main({ roomIndex }) {
                     now = dis[now][dest][1];
                     cnt++;
                 }
+                let routeImgs = document.getElementById('routeImgs');
+                let new_element = document.createElement('img');
+                // new_element.src = getImage(String(now));
+                new_element.src = images[String(dest) + '.jpeg'];
+                new_element.style.width = '100%';
+                routeImgs.appendChild(new_element);
             }
             function drawRouteNoAnim(now, dest, c) {
                 function draws2t(s, t, c, id) {
