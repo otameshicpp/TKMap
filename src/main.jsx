@@ -11,11 +11,24 @@ import mp from "./map.png"
 import ds from "./downstairs.png"
 import us from "./upstairs.png"
 import nwimg from "./now.png"
-
+import img1 from "./assets/1.jpeg"
 import './App.css';
+
+
+
+
+
 const rooms = ["選択する", "音楽室", '物理実験室', '美術室', '地理室', '地学室', '生物講義室', '生物室', 'コモンスペース(調整中)', '2-A', '2-B', '2-C', '2-1', '2-2', '2-3', '2-4'];
 // const videos = [[null, null, b2A, b2s, b2k], [null, null, c2AO, c2sO]];
 // const video_after_buturi = [[null, null, b2A, b2s], [null, null, c2A, c2s]];
+
+function importAll(r) {
+    let images = {};
+    r.keys().map((item, index) => { images[item.replace('./', '')] = r(item); });
+    return images;
+}
+
+const images = importAll(require.context('./assets', false, /\.(png|jpe?g|svg)$/));
 
 function Main({ roomIndex }) {
     const direcVideo = useRef(null);
@@ -44,6 +57,7 @@ function Main({ roomIndex }) {
                     <button onClick={showDirections}>Show Directions</button>
                 </div >
                 <canvas id="direcVideo" ref={direcVideo} style={vidStyle} width={2500} height={2000}></canvas>
+                <div id='routeImgs'></div>
             </div>
             <script src="script.js"></script>
         </div>
@@ -66,6 +80,10 @@ function Main({ roomIndex }) {
     }
     function showDirections() {
         localStorage.setItem("destination", picker.current.selectedIndex);
+        let items = document.querySelectorAll('#routeImgs img');
+        for (const item of items) {
+            item.remove();
+        }
         updateInfo();
         setVidStyle({ display: "inline" });
         function showMap(now, dest, prev) {
@@ -242,6 +260,15 @@ function Main({ roomIndex }) {
                 let cnt = 0;
                 while (now != dest && cnt < 30) {
                     draws2t(now, dis[now][dest][1], c, cnt);
+                    //画像表示
+                    {
+                        let routeImgs = document.getElementById('routeImgs');
+                        let new_element = document.createElement('img');
+                        // new_element.src = getImage(String(now));
+                        new_element.src = images[String(now) + '.jpeg'];
+                        new_element.style.width = '100%';
+                        routeImgs.appendChild(new_element);
+                    }
                     now = dis[now][dest][1];
                     cnt++;
                 }
